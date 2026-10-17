@@ -133,3 +133,42 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   .auth-top { padding-top: 42px; min-height: 260px; }
   .auth-panel { padding-top: 30px; }
 }
+
+
+/* Centralização e dimensões consistentes */
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.onboarding,
+.auth-screen {
+  width: 100%;
+  max-width: 390px;
+  height: min(820px, calc(100dvh - 44px));
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-inline: auto;
+}
+
+.onboarding {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 480px) {
+  #app {
+    min-height: 100dvh;
+  }
+
+  .onboarding,
+  .auth-screen {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    border-radius: 0;
+  }
+}
